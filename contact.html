@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact - UnfilteredSphere</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:Arial, Helvetica, sans-serif; background:#f5f5f7; color:#111827; }
+    a { text-decoration:none; color:inherit; }
+    header { background:#111827; color:#f9fafb; padding:14px 24px; }
+    .nav-container { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; }
+    .logo { font-weight:700; font-size:1.25rem; letter-spacing:0.05em; }
+    .logo span { color:#60a5fa; }
+    .nav-links { display:flex; gap:18px; font-size:0.95rem; }
+    .nav-links a { opacity:0.9; }
+    .nav-links a:hover { opacity:1; }
+
+    .page { max-width:720px; margin:26px auto; padding:0 16px 30px; }
+    h1 { font-size:1.7rem; margin-bottom:6px; }
+    .sub { font-size:0.9rem; color:#6b7280; margin-bottom:18px; }
+
+    form { background:#ffffff; border-radius:14px; border:1px solid #e5e7eb; padding:18px; display:flex; flex-direction:column; gap:10px; }
+    label { font-size:0.85rem; color:#374151; }
+    input, textarea { width:100%; padding:8px 10px; border-radius:8px; border:1px solid #d1d5db; font-size:0.9rem; }
+    textarea { min-height:120px; resize:vertical; }
+    button { margin-top:6px; background:#2563eb; border:none; color:#f9fafb; padding:9px 14px; border-radius:999px; font-size:0.9rem; cursor:pointer; }
+    button:hover { background:#1d4ed8; }
+
+    .info { font-size:0.84rem; color:#6b7280; margin-top:16px; }
+    .info strong { color:#111827; }
+
+    @media (max-width: 800px) {
+      .nav-links { display:none; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav-container">
+    <div class="logo">Unfiltered<span>Sphere</span></div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="categories.html">Categories</a>
+      <a href="blog.html">Blog</a>
+      <a href="cards.html">Cards & Finance</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <h1>Contact</h1>
+  <p class="sub">
+    Questions, collaboration ideas or feedback about the guides?  
+    Leave a message here and we will get back to you.
+  </p>
+
+  <form action="#" method="post">
+    <div>
+      <label for="name">Your name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name">
+    </div>
+
+    <div>
+      <label for="email">Your email</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com">
+    </div>
+
+    <div>
+      <label for="topic">Topic</label>
+      <input type="text" id="topic" name="topic" placeholder="Eg. Electronics, fashion, travel, cards…">
+    </div>
+
+    <div>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Write your message here"></textarea>
+    </div>
+
+    <button type="submit">Send message</button>
+  </form>
+
+  <p class="info">
+    You can also connect using your social media handles and brand name  
+    <strong>UnfilteredSphere</strong> across platforms (email, website, and social profiles).
+  </p>
+</main>
+</body>
+</html>

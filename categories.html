@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Categories - UnfilteredSphere</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:Arial, Helvetica, sans-serif; background:#f5f5f7; color:#111827; }
+    a { text-decoration:none; color:inherit; }
+    header { background:#111827; color:#f9fafb; padding:14px 24px; }
+    .nav-container { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; }
+    .logo { font-weight:700; font-size:1.25rem; letter-spacing:0.05em; }
+    .logo span { color:#60a5fa; }
+    .nav-links { display:flex; gap:18px; font-size:0.95rem; }
+    .nav-links a { opacity:0.9; }
+    .nav-links a:hover { opacity:1; }
+    .page { max-width:1100px; margin:26px auto; padding:0 16px 30px; }
+    h1 { font-size:1.7rem; margin-bottom:6px; }
+    .sub { font-size:0.9rem; color:#6b7280; margin-bottom:18px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+    .card { background:#ffffff; border-radius:14px; border:1px solid #e5e7eb; padding:16px; }
+    .card h2 { font-size:1.02rem; margin-bottom:8px; }
+    .card p { font-size:0.86rem; color:#4b5563; margin-bottom:8px; }
+    .pill-row { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px; }
+    .pill { font-size:0.75rem; padding:3px 8px; border-radius:999px; background:#eff6ff; color:#1d4ed8; }
+    .link { font-size:0.8rem; color:#2563eb; margin-top:4px; display:inline-block; }
+    @media (max-width: 800px) {
+      .nav-links { display:none; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav-container">
+    <div class="logo">Unfiltered<span>Sphere</span></div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="categories.html">Categories</a>
+      <a href="blog.html">Blog</a>
+      <a href="cards.html">Cards & Finance</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <h1>All categories</h1>
+  <p class="sub">Everyday life, organised: explore ideas by area and then go deeper through detailed guides.</p>
+
+  <div class="grid">
+    <section class="card" id="electronics">
+      <h2>Electronics & Gadgets</h2>
+      <p>Phones, laptops, audio, smart devices and practical tech that supports work, study and home.</p>
+      <div class="pill-row">
+        <span class="pill">Phones</span>
+        <span class="pill">Laptops</span>
+        <span class="pill">Headphones</span>
+        <span class="pill">Smartwatches</span>
+      </div>
+      <a class="link" href="blog.html">View electronics guides →</a>
+    </section>
+
+    <section class="card" id="mens-fashion">
+      <h2>Men's Fashion</h2>
+      <p>Wardrobe basics, seasonal outfits and simple style frameworks you can repeat again and again.</p>
+      <div class="pill-row">
+        <span class="pill">Casual</span>
+        <span class="pill">Workwear</span>
+        <span class="pill">Occasion</span>
+        <span class="pill">Essentials</span>
+      </div>
+      <a class="link" href="blog.html">View men's style ideas →</a>
+    </section>
+
+    <section class="card" id="womens-fashion">
+      <h2>Women's Fashion</h2>
+      <p>Everyday outfits, comfort-first looks and mix-and-match pieces that fit real routines.</p>
+      <div class="pill-row">
+        <span class="pill">Daily wear</span>
+        <span class="pill">Work</span>
+        <span class="pill">Festive</span>
+        <span class="pill">Capsule wardrobe</span>
+      </div>
+      <a class="link" href="blog.html">View women's style ideas →</a>
+    </section>
+
+    <section class="card" id="mens-footwear">
+      <h2>Men's Footwear</h2>
+      <p>Sneakers, formals and daily footwear with simple guides on how to pick the right pair.</p>
+      <div class="pill-row">
+        <span class="pill">Sneakers</span>
+        <span class="pill">Formal</span>
+        <span class="pill">Sandals</span>
+        <span class="pill">Daily comfort</span>
+      </div>
+      <a class="link" href="blog.html">View footwear ideas →</a>
+    </section>
+
+    <section class="card" id="womens-footwear">
+      <h2>Women's Footwear</h2>
+      <p>From flats to heels, see when comfort, style and practicality can all sit together.</p>
+      <div class="pill-row">
+        <span class="pill">Flats</span>
+        <span class="pill">Heels</span>
+        <span class="pill">Casual</span>
+        <span class="pill">Daily use</span>
+      </div>
+      <a class="link" href="blog.html">View footwear ideas →</a>
+    </section>
+
+    <section class="card" id="beauty">
+      <h2>Beauty & Personal Care</h2>
+      <p>Skin, hair and body basics – with short routines and simple product combinations.</p>
+      <div class="pill-row">
+        <span class="pill">Skin basics</span>
+        <span class="pill">Hair care</span>
+        <span class="pill">Body care</span>
+        <span class="pill">Grooming</span>
+      </div>
+      <a class="link" href="blog.html">View care routines →</a>
+    </section>
+
+    <section class="card" id="health">
+      <h2>Health & Personal Care</h2>
+      <p>Basic wellness tools, organisers, health helpers and practical support products.</p>
+      <div class="pill-row">
+        <span class="pill">Daily health</span>
+        <span class="pill">Organisation</span>
+        <span class="pill">Monitoring</span>
+      </div>
+      <a class="link" href="blog.html">View health helpers →</a>
+    </section>
+
+    <section class="card" id="baby">
+      <h2>Baby Products</h2>
+      <p>Essentials for new parents, baby comfort basics and calm, organised checklists.</p>
+      <div class="pill-row">
+        <span class="pill">Newborn</span>
+        <span class="pill">Feeding</span>
+        <span class="pill">Bath & care</span>
+        <span class="pill">Sleep</span>
+      </div>
+      <a class="link" href="blog.html">View baby checklists →</a>
+    </section>
+
+    <section class="card" id="home-kitchen">
+      <h2>Home & Kitchen</h2>
+      <p>Storage, cooking tools and small improvements that make your home feel lighter.</p>
+      <div class="pill-row">
+        <span class="pill">Organisation</span>
+        <span class="pill">Cooking tools</span>
+        <span class="pill">Cleaning</span>
+        <span class="pill">Decor basics</span>
+      </div>
+      <a class="link" href="blog.html">View home ideas →</a>
+    </section>
+
+    <section class="card" id="groceries">
+      <h2>Groceries & Essentials</h2>
+      <p>Pantry, cleaning, and everyday essentials built into simple, repeatable lists.</p>
+      <div class="pill-row">
+        <span class="pill">Pantry</span>
+        <span class="pill">Cleaning</span>
+        <span class="pill">Monthly stock</span>
+      </div>
+      <a class="link" href="blog.html">View essentials →</a>
+    </section>
+
+    <section class="card" id="travel">
+      <h2>Travel & Agency Picks</h2>
+      <p>Travel gear, luggage, small accessories and ideas that support smoother trips.</p>
+      <div class="pill-row">
+        <span class="pill">Luggage</span>
+        <span class="pill">Travel kits</span>
+        <span class="pill">Accessories</span>
+      </div>
+      <a class="link" href="blog.html">View travel ideas →</a>
+    </section>
+
+    <section class="card" id="food">
+      <h2>Food & Groceries</h2>
+      <p>Ready-to-eat options, snacks and simple food helpers for busy days and late nights.</p>
+      <div class="pill-row">
+        <span class="pill">Snacks</span>
+        <span class="pill">Quick meals</span>
+        <span class="pill">Drinks</span>
+      </div>
+      <a class="link" href="blog.html">View food picks →</a>
+    </section>
+
+    <section class="card" id="cards">
+      <h2>Cards & Financial Products</h2>
+      <p>ATM cards, debit cards, credit cards and other financial tools explained in simple language.</p>
+      <div class="pill-row">
+        <span class="pill">Debit cards</span>
+        <span class="pill">Credit cards</span>
+        <span class="pill">Prepaid</span>
+      </div>
+      <a class="link" href="cards.html">Open cards & finance →</a>
+    </section>
+
+  </div>
+</main>
+</body>
+</html>

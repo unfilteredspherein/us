@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cards & Finance - UnfilteredSphere</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:Arial, Helvetica, sans-serif; background:#0b1220; color:#e5e7eb; }
+    a { text-decoration:none; color:inherit; }
+    header { background:#020617; color:#f9fafb; padding:14px 24px; }
+    .nav-container { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; }
+    .logo { font-weight:700; font-size:1.25rem; letter-spacing:0.05em; }
+    .logo span { color:#60a5fa; }
+    .nav-links { display:flex; gap:18px; font-size:0.95rem; }
+    .nav-links a { opacity:0.9; }
+    .nav-links a:hover { opacity:1; }
+    .page { max-width:1100px; margin:26px auto; padding:0 16px 30px; }
+    h1 { font-size:1.8rem; margin-bottom:6px; }
+    .sub { font-size:0.9rem; color:#9ca3af; margin-bottom:20px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
+    .card { background:linear-gradient(135deg,#020617,#111827); border-radius:16px; border:1px solid #1e293b; padding:18px; }
+    .card h2 { font-size:1.05rem; margin-bottom:8px; }
+    .card p { font-size:0.86rem; color:#cbd5f5; margin-bottom:10px; }
+    .pill { display:inline-block; font-size:0.75rem; padding:3px 8px; border-radius:999px; background:#0ea5e9; color:#0f172a; margin-right:5px; margin-bottom:6px; }
+    .list { font-size:0.82rem; color:#e5e7eb; margin-top:6px; padding-left:16px; }
+    .list li { margin-bottom:3px; }
+    .note { font-size:0.8rem; color:#94a3b8; margin-top:18px; max-width:720px; }
+    @media (max-width: 800px) {
+      .nav-links { display:none; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav-container">
+    <div class="logo">Unfiltered<span>Sphere</span></div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="categories.html">Categories</a>
+      <a href="blog.html">Blog</a>
+      <a href="cards.html">Cards & Finance</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <h1>Cards & financial tools</h1>
+  <p class="sub">
+    A simple, unfiltered breakdown of debit cards, credit cards, ATM usage and everyday money tools — 
+    so you can choose based on how you actually live, not just advertising.
+  </p>
+
+  <div class="grid">
+    <section class="card">
+      <h2>Debit cards</h2>
+      <span class="pill">Daily spending</span>
+      <span class="pill">Bank-linked</span>
+      <p>
+        Ideal for people who want to spend only what they already have in their bank account.
+        Easy for online payments, ATM withdrawals and everyday purchases.
+      </p>
+      <ul class="list">
+        <li>Good for controlling overspending.</li>
+        <li>Works well for subscriptions and online shopping.</li>
+        <li>Backed directly by your bank balance.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Credit cards</h2>
+      <span class="pill">Rewards</span>
+      <span class="pill">Monthly billing</span>
+      <p>
+        Useful when you want rewards, cashback or travel benefits – but they work best only
+        if you pay your bill in full and on time.
+      </p>
+      <ul class="list">
+        <li>Can earn points, miles or cashback on purchases.</li>
+        <li>Helps build a credit history when used carefully.</li>
+        <li>Always track due dates and total spending.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Prepaid & virtual cards</h2>
+      <span class="pill">Controlled</span>
+      <span class="pill">Online safety</span>
+      <p>
+        Works like a wallet with a fixed loaded amount – good for gifting, online trials,
+        or keeping your main card details separate from risky websites.
+      </p>
+      <ul class="list">
+        <li>Spend is limited to what you load in advance.</li>
+        <li>Helps separate “fun” or test spending from main accounts.</li>
+        <li>Useful for subscriptions and trials.</li>
+      </ul>
+    </section>
+  </div>
+
+  <p class="note">
+    Note: UnfilteredSphere only shares ideas, breakdowns and comparisons. 
+    For any specific card or offer, always read the official details, terms and conditions on the provider’s own website
+    before applying or making a decision.
+  </p>
+</main>
+</body>
+</html>
