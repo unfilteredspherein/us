@@ -1,345 +1,328 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>UnfilteredSphere - Smart Picks for Everyday Life</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="UnfilteredSphere - smart product ideas, comparison guides and lifestyle picks across fashion, electronics, home, travel and more.">
+  <meta charset="utf-8" />
+  <title>UnfilteredSphere — Smart Picks for Everyday Life</title>
+  <meta name="description" content="UnfilteredSphere: clear, practical product ideas, buying guides and lifestyle picks across fashion, electronics, home, travel and more." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#111827" />
+  <meta name="google-site-verification" content="pXVX1kSaBnLIYZlQs-z_xyrO_hbgPnzLSogsLX1GEvg" />
+  <link rel="icon" href="data:,">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Arial, Helvetica, sans-serif; background:#f5f5f7; color:#111827; }
-    a { text-decoration: none; color: inherit; }
-    header { background:#111827; color:#f9fafb; padding:14px 24px; position: sticky; top:0; z-index: 50; }
-    .nav-container { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; }
-    .logo { font-weight:700; font-size:1.25rem; letter-spacing:0.05em; }
-    .logo span { color:#60a5fa; }
-    .nav-links { display:flex; gap:18px; font-size:0.95rem; }
-    .nav-links a { opacity:0.9; }
-    .nav-links a:hover { opacity:1; }
-    .btn-primary { background:#2563eb; color:#f9fafb; padding:8px 16px; border-radius:999px; font-size:0.9rem; border:none; cursor:pointer; }
-    .btn-primary:hover { background:#1d4ed8; }
+    :root{
+      --bg:#f5f5f7;
+      --muted:#6b7280;
+      --text:#111827;
+      --card:#ffffff;
+      --brand:#2563eb;
+      --dark:#0f1724;
+      --radius:14px;
+      --shadow: 0 8px 28px rgba(15,23,42,0.12);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:Inter, "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+    }
 
-    .hero { max-width:1100px; margin:32px auto 24px; display:grid; grid-template-columns:1.2fr 1fr; gap:28px; align-items:center; padding:0 16px; }
-    .hero-tag { font-size:0.8rem; text-transform:uppercase; letter-spacing:0.16em; color:#6b7280; margin-bottom:10px; }
-    .hero-title { font-size:2.2rem; font-weight:700; margin-bottom:12px; }
-    .hero-title span { color:#2563eb; }
-    .hero-sub { font-size:0.98rem; color:#4b5563; margin-bottom:18px; }
-    .hero-actions { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
-    .hero-small { font-size:0.8rem; color:#6b7280; }
-    .hero-card { background:#111827; border-radius:18px; padding:18px; color:#f9fafb; box-shadow:0 14px 40px rgba(15,23,42,0.35); }
-    .hero-card h3 { font-size:1.05rem; margin-bottom:8px; }
-    .hero-card p { font-size:0.9rem; color:#e5e7eb; margin-bottom:12px; }
-    .hero-chip { display:inline-block; font-size:0.75rem; background:#1f2937; padding:4px 10px; border-radius:999px; margin-right:6px; margin-bottom:4px; color:#d1d5db; }
+    header{
+      background:linear-gradient(180deg,var(--dark),#0b1220);
+      color:#f9fafb;
+      position:sticky;top:0;z-index:60;
+      backdrop-filter: blur(4px);
+      border-bottom:1px solid rgba(255,255,255,0.02);
+    }
+    .nav{
+      max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;
+    }
+    .brand{font-weight:700;font-size:1.125rem;letter-spacing:0.04em}
+    .brand span{color:var(--brand)}
+    nav a{color:rgba(249,250,251,0.9);text-decoration:none;margin-left:16px;font-size:0.95rem}
+    .cta{background:var(--brand);color:#fff;padding:8px 14px;border-radius:999px;border:none;font-weight:600;cursor:pointer}
+    .container{max-width:1100px;margin:28px auto;padding:0 18px}
 
-    .section { max-width:1100px; margin:24px auto; padding:0 16px; }
-    .section-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:12px; }
-    .section-title { font-size:1.3rem; font-weight:600; }
-    .section-sub { font-size:0.85rem; color:#6b7280; }
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center}
+    .hero-kicker{font-size:0.75rem;text-transform:uppercase;color:var(--muted);letter-spacing:0.12em;margin-bottom:10px}
+    h1.hero-title{font-size:2.2rem;line-height:1.05;margin-bottom:12px}
+    h1.hero-title span{color:var(--brand)}
+    .lead{color:#374151;margin-bottom:16px;font-size:1rem}
+    .hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .muted{color:var(--muted);font-size:0.9rem}
 
-    .category-grid { display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); margin-top:10px; }
-    .category-card { background:#ffffff; border-radius:14px; padding:14px; border:1px solid #e5e7eb; display:flex; flex-direction:column; justify-content:space-between; }
-    .category-name { font-size:0.98rem; font-weight:600; margin-bottom:6px; }
-    .category-desc { font-size:0.83rem; color:#6b7280; margin-bottom:10px; }
-    .badge { display:inline-block; font-size:0.7rem; padding:3px 7px; border-radius:999px; background:#eff6ff; color:#1d4ed8; }
-    .category-link { font-size:0.8rem; color:#2563eb; margin-top:auto; }
+    .card{
+      background:var(--card);border-radius:var(--radius);padding:18px;border:1px solid #e6e9ef;box-shadow:var(--shadow)
+    }
+    .hero-card h3{font-size:1.05rem;margin-bottom:8px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .chip{background:#f1f9ff;color:var(--brand);padding:6px 10px;border-radius:999px;font-size:0.78rem}
 
-    .blog-grid { display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); margin-top:10px; }
-    .blog-card { background:#ffffff; border-radius:14px; padding:14px; border:1px solid #e5e7eb; display:flex; flex-direction:column; gap:8px; }
-    .blog-tag { font-size:0.7rem; color:#6b7280; text-transform:uppercase; letter-spacing:0.12em; }
-    .blog-title { font-size:0.98rem; font-weight:600; }
-    .blog-excerpt { font-size:0.85rem; color:#4b5563; }
-    .blog-meta { font-size:0.75rem; color:#9ca3af; }
-    .blog-link { font-size:0.8rem; color:#2563eb; }
+    /* categories */
+    .section{margin-top:26px}
+    .section-head{display:flex;align-items:end;justify-content:space-between}
+    .section-title{font-size:1.25rem;font-weight:600}
+    .section-sub{color:var(--muted);font-size:0.9rem}
+    .grid{display:grid;gap:14px;margin-top:12px}
+    .category-grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+    .category{background:linear-gradient(180deg,#fff,#fbfdff);padding:14px;border-radius:12px;border:1px solid #eef2f7;display:flex;flex-direction:column;gap:8px}
+    .category .name{font-weight:600}
+    .badge{font-size:0.72rem;padding:4px 8px;border-radius:999px;background:#eef6ff;color:var(--brand);display:inline-block}
 
-    footer { background:#111827; color:#9ca3af; padding:18px 16px; margin-top:28px; }
-    .footer-inner { max-width:1100px; margin:0 auto; font-size:0.8rem; display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px; }
-    .footer-links { display:flex; gap:10px; }
+    /* blog */
+    .blog-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .meta{font-size:0.8rem;color:#9aa3ad}
 
-    @media (max-width: 800px) {
-      .hero { grid-template-columns:1fr; }
-      .hero-card { order:-1; }
-      .nav-links { display:none; }
+    /* contact */
+    .contact-row{display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start;margin-top:18px}
+    .contact-form label{display:block;font-size:0.85rem;margin-bottom:6px;color:var(--muted)}
+    .contact-form input,.contact-form textarea{
+      width:100%;padding:10px;border-radius:8px;border:1px solid #dde6ef;background:#fff;font-size:0.95rem;margin-bottom:10px;
+    }
+    .contact-form button{background:var(--brand);color:#fff;padding:10px 12px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
+
+    footer{background:var(--dark);color:#b6c0c8;padding:20px 0;margin-top:36px}
+    .footer-inner{max-width:1100px;margin:0 auto;padding:0 18px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+    .small{font-size:0.85rem;color:#9aa3ad}
+    a.alt{color:#cfe3ff;text-decoration:none}
+
+    /* utilities */
+    .stack{display:flex;flex-direction:column;gap:8px}
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .contact-row{grid-template-columns:1fr}
+      nav a{display:none}
     }
   </style>
-  
 </head>
-  <meta name="google-site-verification" content="pXVX1kSaBnLIYZlQs-z_xyrO_hbgPnzLSogsLX1GEvg" />
 <body>
-
-<header>
-  <div class="nav-container">
-    <div class="logo">Unfiltered<span>Sphere</span></div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="categories.html">Categories</a>
-      <a href="blog.html">Blog</a>
-      <a href="cards.html">Cards & Finance</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <a href="categories.html"><button class="btn-primary">Explore Picks</button></a>
-  </div>
-</header>
-
-<main>
-  <!-- HERO -->
-  <section class="hero">
-    <div>
-      <div class="hero-tag">SMART PICKS • REAL-LIFE GUIDES</div>
-      <h1 class="hero-title">
-        Unfiltered <span>product ideas</span> for your everyday life.
-      </h1>
-      <p class="hero-sub">
-        UnfilteredSphere helps you discover practical products, lifestyle combos and smart choices  
-        across fashion, electronics, home, travel, groceries, personal care, cards and more –  
-        all in one simple place.
-      </p>
-      <div class="hero-actions">
-        <a href="categories.html"><button class="btn-primary">Browse Categories</button></a>
-        <span class="hero-small">Start with curated ideas instead of random searching.</span>
+  <header>
+    <div class="nav">
+      <div class="brand">Unfiltered<span>Sphere</span></div>
+      <nav aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="blog.html">Blog</a>
+        <a href="cards.html">Cards</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div style="display:flex;gap:10px;align-items:center">
+        <a class="cta" href="categories.html">Explore Picks</a>
       </div>
     </div>
-    <aside class="hero-card">
-      <h3>What you’ll find inside</h3>
-      <p>Short, clear guides that show you what to buy, why it matters, and how to use it better.</p>
+  </header>
+
+  <main class="container" id="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
       <div>
-        <span class="hero-chip">Men's & Women's Fashion</span>
-        <span class="hero-chip">Electronics & Gadgets</span>
-        <span class="hero-chip">Home & Kitchen</span>
-        <span class="hero-chip">Cards & Travel</span>
-        <span class="hero-chip">Groceries & Essentials</span>
-      </div>
-    </aside>
-  </section>
-
-  <!-- CATEGORIES OVERVIEW -->
-  <section class="section">
-    <div class="section-header">
-      <div>
-        <h2 class="section-title">Browse by category</h2>
-        <p class="section-sub">Organised ideas so you can quickly find what actually fits your life.</p>
-      </div>
-      <a href="categories.html" class="section-sub">View full category list →</a>
-    </div>
-
-    <div class="category-grid">
-      <div class="category-card">
-        <div>
-          <div class="category-name">Electronics & Gadgets</div>
-          <p class="category-desc">
-            Phones, laptops, audio, smart wearables and everyday tech that actually makes sense.
-          </p>
+        <div class="hero-kicker">SMART PICKS • PRACTICAL GUIDES</div>
+        <h1 id="hero-title" class="hero-title">Unfiltered product ideas for everyday life — clear, short and useful.</h1>
+        <p class="lead">We collect practical product suggestions, simple outfit & packing formulas, and no-nonsense buying guides so you spend less time searching and more time using better products.</p>
+        <div class="hero-actions">
+          <a class="cta" href="categories.html">Browse categories</a>
+          <a class="alt muted" href="blog.html">Read short guides</a>
         </div>
-        <div>
-          <span class="badge">Smart picks</span>
-          <div class="category-link"><a href="categories.html#electronics">Open ideas →</a></div>
+
+        <div style="margin-top:18px" class="muted">
+          Recommended for: busy people, new shoppers, gift hunters and anyone tired of long confusing reviews.
         </div>
       </div>
 
-      <div class="category-card">
-        <div>
-          <div class="category-name">Men's Fashion</div>
-          <p class="category-desc">
-            Simple outfit formulas, wardrobe basics and seasonal looks that just work.
-          </p>
+      <aside class="card hero-card" aria-label="Highlights">
+        <h3>Inside UnfilteredSphere</h3>
+        <p class="muted" style="margin-bottom:10px">Short explainers, quick comparisons and pick lists — written for real decisions, not clicks.</p>
+        <div class="chips">
+          <span class="chip">Gadgets & Tech</span>
+          <span class="chip">Style & Fashion</span>
+          <span class="chip">Home & Kitchen</span>
+          <span class="chip">Travel & Cards</span>
         </div>
+        <div style="margin-top:12px;display:flex;gap:8px;align-items:center;justify-content:space-between">
+          <div class="muted" style="font-size:0.85rem">Get updates (no spam)</div>
+          <a href="#contact" class="cta" style="padding:8px 10px;font-size:0.86rem;">Subscribe</a>
+        </div>
+      </aside>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section" aria-labelledby="cat-title">
+      <div class="section-head">
         <div>
-          <span class="badge">Style guides</span>
-          <div class="category-link"><a href="categories.html#mens-fashion">See outfits →</a></div>
+          <h2 id="cat-title" class="section-title">Browse by category</h2>
+          <div class="section-sub">Organised ideas to help you pick quickly and confidently.</div>
+        </div>
+        <a href="categories.html" class="section-sub">View all categories →</a>
+      </div>
+
+      <div class="grid category-grid">
+        <div class="category">
+          <div class="name">Electronics & Gadgets</div>
+          <div class="muted">Phones, audio, laptops and daily tech suggestions that make sense.</div>
+          <div style="margin-top:8px"><span class="badge">Smart picks</span></div>
+        </div>
+
+        <div class="category">
+          <div class="name">Men's Fashion</div>
+          <div class="muted">Simple wardrobe rules and outfit formulas that actually work.</div>
+          <div style="margin-top:8px"><span class="badge">Style guides</span></div>
+        </div>
+
+        <div class="category">
+          <div class="name">Home & Kitchen</div>
+          <div class="muted">Tools, organisers and small upgrades for a smoother home life.</div>
+          <div style="margin-top:8px"><span class="badge">Home hacks</span></div>
+        </div>
+
+        <div class="category">
+          <div class="name">Cards & Finance</div>
+          <div class="muted">Simple breakdowns on cards, rewards and basic money choices.</div>
+          <div style="margin-top:8px"><span class="badge">Money basics</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LATEST GUIDES -->
+    <section class="section" aria-labelledby="guides-title">
+      <div class="section-head" style="margin-top:18px">
+        <div>
+          <h2 id="guides-title" class="section-title">Latest guides & break-downs</h2>
+          <div class="section-sub">Short reads to help you decide without confusion.</div>
+        </div>
+        <a href="blog.html" class="section-sub">View all guides →</a>
+      </div>
+
+      <div class="grid blog-grid">
+        <article class="card">
+          <div class="meta">Electronics · 5 min</div>
+          <h3 style="margin-top:6px">Choosing a phone that actually fits your life</h3>
+          <p class="muted">A simple checklist covering camera, battery, storage and real daily needs.</p>
+          <div style="margin-top:8px"><a class="alt" href="blog.html">Read guide →</a></div>
+        </article>
+
+        <article class="card">
+          <div class="meta">Home · 4 min</div>
+          <h3 style="margin-top:6px">10 small home tools that silently save time</h3>
+          <p class="muted">Practical picks that reduce friction in daily routines.</p>
+          <div style="margin-top:8px"><a class="alt" href="blog.html">Read guide →</a></div>
+        </article>
+
+        <article class="card">
+          <div class="meta">Money · 6 min</div>
+          <h3 style="margin-top:6px">Credit, debit or prepaid: which one makes sense?</h3>
+          <p class="muted">A short, clear explanation so you can use the right card for the right purpose.</p>
+          <div style="margin-top:8px"><a class="alt" href="cards.html">Open explanation →</a></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT / SUBSCRIBE -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="section-head" style="margin-top:22px">
+        <div>
+          <h2 id="contact-title" class="section-title">Get in touch or subscribe</h2>
+          <div class="section-sub">Questions, suggestions or collaboration — we'd love to hear from you.</div>
         </div>
       </div>
 
-      <div class="category-card">
-        <div>
-          <div class="category-name">Women's Fashion</div>
-          <p class="category-desc">
-            Everyday wear, occasion looks and mix-and-match suggestions for real life.
-          </p>
-        </div>
-        <div>
-          <span class="badge">Outfit ideas</span>
-          <div class="category-link"><a href="categories.html#womens-fashion">Explore looks →</a></div>
-        </div>
-      </div>
+      <div class="contact-row">
+        <div class="card contact-info stack" aria-label="Contact information">
+          <div>
+            <h3 style="margin-bottom:6px">Email us directly</h3>
+            <div class="muted">For tips, partnerships and press: <br>
+              <a href="mailto:unfilteredsphere.in@gmail.com" class="alt">unfilteredsphere.in@gmail.com</a>
+            </div>
+          </div>
 
-      <div class="category-card">
-        <div>
-          <div class="category-name">Men's Footwear</div>
-          <p class="category-desc">
-            From daily sneakers to office formals – how to choose and when to wear what.
-          </p>
+          <div style="margin-top:10px">
+            <h4 style="margin-bottom:6px">Short newsletter</h4>
+            <div class="muted">No spam — occasional useful picks and short guides delivered to your inbox.</div>
+            <form onsubmit="subscribe(event)" style="margin-top:10px;display:flex;gap:8px">
+              <input id="subscribeEmail" type="email" required placeholder="your@email.com" aria-label="Email for subscription" />
+              <button type="submit">Subscribe</button>
+            </form>
+            <div id="subMsg" style="font-size:0.85rem;color:var(--muted);margin-top:8px"></div>
+          </div>
         </div>
-        <div>
-          <span class="badge">Everyday picks</span>
-          <div class="category-link"><a href="categories.html#mens-footwear">View options →</a></div>
-        </div>
-      </div>
 
-      <div class="category-card">
-        <div>
-          <div class="category-name">Women's Footwear</div>
-          <p class="category-desc">
-            Comfortable, stylish and occasion-ready footwear ideas that don’t feel complicated.
-          </p>
-        </div>
-        <div>
-          <span class="badge">Comfort + Style</span>
-          <div class="category-link"><a href="categories.html#womens-footwear">View options →</a></div>
-        </div>
+        <form class="card contact-form" onsubmit="contactSend(event)" aria-label="Contact form">
+          <div style="display:flex;gap:10px">
+            <div style="flex:1">
+              <label for="name">Your name</label>
+              <input id="name" type="text" placeholder="Aisha Khan" />
+            </div>
+            <div style="width:160px">
+              <label for="subject">Subject</label>
+              <input id="subject" type="text" placeholder="Quick question" />
+            </div>
+          </div>
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" placeholder="Write your message here..."></textarea>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div class="muted small">We aim to reply within 3 business days.</div>
+            <div>
+              <button type="submit">Send message</button>
+            </div>
+          </div>
+          <div id="formMsg" style="margin-top:10px;font-size:0.9rem;color:var(--muted)"></div>
+        </form>
       </div>
+    </section>
+  </main>
 
-      <div class="category-card">
-        <div>
-          <div class="category-name">Beauty & Personal Care</div>
-          <p class="category-desc">
-            Simple routines, skin & hair basics and low-effort product combos that work.
-          </p>
-        </div>
-        <div>
-          <span class="badge">Care routines</span>
-          <div class="category-link"><a href="categories.html#beauty">See ideas →</a></div>
-        </div>
-      </div>
-
-      <div class="category-card">
-        <div>
-          <div class="category-name">Health & Personal Care</div>
-          <p class="category-desc">
-            Daily wellness tools, basic health helpers and small habits that add up.
-          </p>
-        </div>
-        <div>
-          <span class="badge">Daily use</span>
-          <div class="category-link"><a href="categories.html#health">View picks →</a></div>
-        </div>
-      </div>
-
-      <div class="category-card">
-        <div>
-          <div class="category-name">Baby Products</div>
-          <p class="category-desc">
-            Practical baby essentials, must-haves for new parents and calm, simple checklists.
-          </p>
-        </div>
-        <div>
-          <span class="badge">Parent helper</span>
-          <div class="category-link"><a href="categories.html#baby">Open guide →</a></div>
-        </div>
-      </div>
-
-      <div class="category-card">
-        <div>
-          <div class="category-name">Home & Kitchen</div>
-          <p class="category-desc">
-            Tools, organisers and kitchen basics that quietly make your home run smoother.
-          </p>
-        </div>
-        <div>
-          <span class="badge">Home hacks</span>
-          <div class="category-link"><a href="categories.html#home-kitchen">Explore ideas →</a></div>
-        </div>
-      </div>
-
-      <div class="category-card">
-        <div>
-          <div class="category-name">Groceries & Essentials</div>
-          <p class="category-desc">
-            Everyday pantry, cleaning and household essentials – organised into simple lists.
-          </p>
-        </div>
-        <div>
-          <span class="badge">Daily basics</span>
-          <div class="category-link"><a href="categories.html#groceries">See lists →</a></div>
-        </div>
-      </div>
-
-      <div class="category-card">
-        <div>
-          <div class="category-name">Travel & Experiences</div>
-          <p class="category-desc">
-            Travel gear, packing setups and small accessories that upgrade your trips.
-          </p>
-        </div>
-        <div>
-          <span class="badge">Trip ready</span>
-          <div class="category-link"><a href="categories.html#travel">Plan smarter →</a></div>
-        </div>
-      </div>
-
-      <div class="category-card">
-        <div>
-          <div class="category-name">Food & Ready-to-Eat</div>
-          <p class="category-desc">
-            Snack ideas, quick fixes and ready-to-eat options to support your busy days.
-          </p>
-        </div>
-        <div>
-          <span class="badge">Quick bites</span>
-          <div class="category-link"><a href="categories.html#food">View ideas →</a></div>
-        </div>
+  <footer>
+    <div class="footer-inner">
+      <div class="small">© <span id="year"></span> UnfilteredSphere — Practical, unfiltered product ideas.</div>
+      <div style="display:flex;gap:12px;align-items:center;">
+        <a class="alt" href="contact.html">Contact</a>
+        <span style="color:#2b3742">·</span>
+        <a class="alt" href="blog.html">Blog</a>
+        <span style="color:#2b3742">·</span>
+        <a class="alt" href="categories.html">Categories</a>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <!-- BLOG PREVIEW -->
-  <section class="section">
-    <div class="section-header">
-      <div>
-        <h2 class="section-title">Latest guides & breakdowns</h2>
-        <p class="section-sub">Short reads that explain how to choose the right product – without confusion.</p>
-      </div>
-      <a href="blog.html" class="section-sub">View all guides →</a>
-    </div>
+  <script>
+    // set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    <div class="blog-grid">
-      <article class="blog-card">
-        <div class="blog-tag">Electronics</div>
-        <h3 class="blog-title">Beginner’s guide: choosing a phone that actually fits your life</h3>
-        <p class="blog-excerpt">
-          Camera, battery, storage or performance? Here is a simple checklist to decide what you truly need.
-        </p>
-        <div class="blog-meta">5 min read · Everyday Tech</div>
-        <a href="blog.html" class="blog-link">Read guide →</a>
-      </article>
+    // simple subscribe handler (client-side only)
+    function subscribe(e){
+      e.preventDefault();
+      const email = document.getElementById('subscribeEmail').value.trim();
+      const msg = document.getElementById('subMsg');
+      if(!email){
+        msg.textContent = 'Please enter a valid email.';
+        return;
+      }
+      msg.textContent = 'Thanks! If you do not see a confirmation, please email us at unfilteredsphere.in@gmail.com';
+      // Here you can attach real subscribe logic (API call) later.
+      setTimeout(()=> msg.textContent = '',6000);
+    }
 
-      <article class="blog-card">
-        <div class="blog-tag">Home & Kitchen</div>
-        <h3 class="blog-title">10 small home tools that silently save time every single day</h3>
-        <p class="blog-excerpt">
-          From organisers to kitchen helpers – see which tools quietly reduce daily friction.
-        </p>
-        <div class="blog-meta">4 min read · Home Basics</div>
-        <a href="blog.html" class="blog-link">Read guide →</a>
-      </article>
+    // simple contact form handler (client-side only)
+    function contactSend(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const formMsg = document.getElementById('formMsg');
 
-      <article class="blog-card">
-        <div class="blog-tag">Cards & Finance</div>
-        <h3 class="blog-title">Credit, debit or prepaid card – which one makes sense for you?</h3>
-        <p class="blog-excerpt">
-          A simple, unfiltered explanation of different card types and how to use them wisely.
-        </p>
-        <div class="blog-meta">6 min read · Money Basics</div>
-        <a href="cards.html" class="blog-link">Open explanation →</a>
-      </article>
-    </div>
-  </section>
-</main>
+      if(!message){
+        formMsg.textContent = 'Please write a short message before sending.';
+        return;
+      }
 
-<footer>
-  <div class="footer-inner">
-    <div>© <span id="year"></span> UnfilteredSphere. Practical, unfiltered product ideas.</div>
-    <div class="footer-links">
-      <a href="contact.html">Contact</a>
-      <span>·</span>
-      <a href="blog.html">Blog</a>
-      <span>·</span>
-      <a href="categories.html">Categories</a>
-    </div>
-  </div>
-</footer>
+      // Fallback instruction: open user's mail client with prefilled email (works across most browsers)
+      const to = 'unfilteredsphere.in@gmail.com';
+      const mailto = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject || 'Message from website')} &body=${encodeURIComponent((name ? ('Name: '+name + '\n\n') : '') + message)}`;
+      window.location.href = mailto;
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+      formMsg.textContent = 'Opening your email client to send the message. If nothing opens, please email unfilteredsphere.in@gmail.com directly.';
+    }
+  </script>
 </body>
 </html>
-
